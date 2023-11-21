@@ -11,7 +11,36 @@
 		790127532AFEDB8D00B7860C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790127522AFEDB8D00B7860C /* ContentView.swift */; };
 		790127552AFEDB8E00B7860C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790127542AFEDB8E00B7860C /* Assets.xcassets */; };
 		790127582AFEDB8E00B7860C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790127572AFEDB8E00B7860C /* Preview Assets.xcassets */; };
+		790127652AFEDCA800B7860C /* Punch_WApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790127642AFEDCA800B7860C /* Punch_WApp.swift */; };
+		790127672AFEDCA800B7860C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790127662AFEDCA800B7860C /* ContentView.swift */; };
+		790127692AFEDCA900B7860C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790127682AFEDCA900B7860C /* Assets.xcassets */; };
+		7901276C2AFEDCA900B7860C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7901276B2AFEDCA900B7860C /* Preview Assets.xcassets */; };
+		7901276F2AFEDCA900B7860C /* Punch W Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 790127622AFEDCA800B7860C /* Punch W Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7901276D2AFEDCA900B7860C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790127452AFEDB8D00B7860C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 790127612AFEDCA800B7860C;
+			remoteInfo = "Punch W Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		790127732AFEDCA900B7860C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7901276F2AFEDCA900B7860C /* Punch W Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7901274D2AFEDB8D00B7860C /* Punch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +48,22 @@
 		790127522AFEDB8D00B7860C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		790127542AFEDB8E00B7860C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		790127572AFEDB8E00B7860C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		790127622AFEDCA800B7860C /* Punch W Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Punch W Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		790127642AFEDCA800B7860C /* Punch_WApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Punch_WApp.swift; sourceTree = "<group>"; };
+		790127662AFEDCA800B7860C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		790127682AFEDCA900B7860C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7901276B2AFEDCA900B7860C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7901274A2AFEDB8D00B7860C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7901275F2AFEDCA800B7860C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				7901274F2AFEDB8D00B7860C /* Punch */,
+				790127632AFEDCA800B7860C /* Punch W Watch App */,
 				7901274E2AFEDB8D00B7860C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				7901274D2AFEDB8D00B7860C /* Punch.app */,
+				790127622AFEDCA800B7860C /* Punch W Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +110,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		790127632AFEDCA800B7860C /* Punch W Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				790127642AFEDCA800B7860C /* Punch_WApp.swift */,
+				790127762AFEE13E00B7860C /* View */,
+				790127682AFEDCA900B7860C /* Assets.xcassets */,
+				7901276A2AFEDCA900B7860C /* Preview Content */,
+			);
+			path = "Punch W Watch App";
+			sourceTree = "<group>";
+		};
+		7901276A2AFEDCA900B7860C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7901276B2AFEDCA900B7860C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		790127762AFEE13E00B7860C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				790127662AFEDCA800B7860C /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,14 +147,33 @@
 				790127492AFEDB8D00B7860C /* Sources */,
 				7901274A2AFEDB8D00B7860C /* Frameworks */,
 				7901274B2AFEDB8D00B7860C /* Resources */,
+				790127732AFEDCA900B7860C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7901276E2AFEDCA900B7860C /* PBXTargetDependency */,
+			);
+			name = Punch;
+			productName = Punch;
+			productReference = 7901274D2AFEDB8D00B7860C /* Punch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		790127612AFEDCA800B7860C /* Punch W Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 790127702AFEDCA900B7860C /* Build configuration list for PBXNativeTarget "Punch W Watch App" */;
+			buildPhases = (
+				7901275E2AFEDCA800B7860C /* Sources */,
+				7901275F2AFEDCA800B7860C /* Frameworks */,
+				790127602AFEDCA800B7860C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Punch;
-			productName = Punch;
-			productReference = 7901274D2AFEDB8D00B7860C /* Punch.app */;
+			name = "Punch W Watch App";
+			productName = "Punch W Watch App";
+			productReference = 790127622AFEDCA800B7860C /* Punch W Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,6 +187,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					7901274C2AFEDB8D00B7860C = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					790127612AFEDCA800B7860C = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
@@ -116,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				7901274C2AFEDB8D00B7860C /* Punch */,
+				790127612AFEDCA800B7860C /* Punch W Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +220,15 @@
 			files = (
 				790127582AFEDB8E00B7860C /* Preview Assets.xcassets in Resources */,
 				790127552AFEDB8E00B7860C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		790127602AFEDCA800B7860C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7901276C2AFEDCA900B7860C /* Preview Assets.xcassets in Resources */,
+				790127692AFEDCA900B7860C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +244,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7901275E2AFEDCA800B7860C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				790127672AFEDCA800B7860C /* ContentView.swift in Sources */,
+				790127652AFEDCA800B7860C /* Punch_WApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7901276E2AFEDCA900B7860C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 790127612AFEDCA800B7860C /* Punch W Watch App */;
+			targetProxy = 7901276D2AFEDCA900B7860C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		790127592AFEDB8E00B7860C /* Debug */ = {
@@ -267,6 +386,7 @@
 		7901275C2AFEDB8E00B7860C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +416,7 @@
 		7901275D2AFEDB8E00B7860C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +443,66 @@
 			};
 			name = Release;
 		};
+		790127712AFEDCA900B7860C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Punch W Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 2TAG3R7V3V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Punch W";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Ahmed-Nasr.Punch";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ahmed-Nasr.Punch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		790127722AFEDCA900B7860C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Punch W Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 2TAG3R7V3V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Punch W";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Ahmed-Nasr.Punch";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ahmed-Nasr.Punch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -339,6 +520,15 @@
 			buildConfigurations = (
 				7901275C2AFEDB8E00B7860C /* Debug */,
 				7901275D2AFEDB8E00B7860C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		790127702AFEDCA900B7860C /* Build configuration list for PBXNativeTarget "Punch W Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				790127712AFEDCA900B7860C /* Debug */,
+				790127722AFEDCA900B7860C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
