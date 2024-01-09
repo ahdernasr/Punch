@@ -5,11 +5,17 @@
 //  Created by Ahmed Nasr on 10/11/2023.
 //
 
+//https://www.youtube.com/watch?v=QzwHU0Xu_EY
+//https://www.youtube.com/watch?v=yuo50-TiKgo
+//https://www.youtube.com/playlist?list=PLYxzS__5yYQnUzfbty9g5zjEeGjYA9xjK
+
 import SwiftUI
 import CoreMotion
 
 struct ContentView: View {
     // Properties
+    
+    @ObservedObject var connector = IOSConnector()
     
     @State private var interval: Double = 0.01
     
@@ -89,7 +95,7 @@ struct ContentView: View {
             
             currVelocity += delta*(arr[i])
             
-            print((arr[i], currVelocity))
+//            print((arr[i], currVelocity))
             
             if currVelocity > maxVelocity {
                 maxVelocity = currVelocity
@@ -134,17 +140,22 @@ struct ContentView: View {
                         }
                         
                         if timer.counter > 10-interval && timer.counter < 10 {
-                            print("X:", atx)
-                            print("Y:", aty)
-                            print("Z:", atz)
+//                            print("X:", atx)
+//                            print("Y:", aty)
+//                            print("Z:", atz)
                             
                             //is this really the best way to do it?
                             //what if I could find the max velocity relative to y and z and compare which has the highest?
-                            let (vx, i) = findMaxVelocity(arr: accelerationsX)
-                            print(vx)
-                            let vy = findVelocityAt(arr: accelerationsY, at: i)
-                            let vz = findVelocityAt(arr: accelerationsZ, at: i)
-                            print(vy,vz,sqrt(pow(vx, 2) + pow(vy, 2) + pow(vz, 2)))
+                            let (vx, _) = findMaxVelocity(arr: accelerationsX)
+                            
+                            connector.session.sendMessage(["message" : vx], replyHandler: nil) { (error) in
+                                                print(error.localizedDescription)
+                                            }
+//                            print(vx)
+//                            let vy = findVelocityAt(arr: accelerationsY, at: i)
+//                            let vz = findVelocityAt(arr: accelerationsZ, at: i)
+//                            print(vy,vz,sqrt(pow(vx, 2) + pow(vy, 2) + pow(vz, 2))) !!!!!!!!!
+                            
                             
                         }
                     }
@@ -162,12 +173,16 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Punch!")
+            Text("State: \(connector.punchState)")
+            Button(action: {
+                print("Starting...")
+                startAccelerometerUpdates()
+            }) {
+                Text("Start")
+            }
         }
         .padding()
         .onAppear {
-            print("Starting...")
-            startAccelerometerUpdates()
         }
         .onDisappear {
             stopAccelerometerUpdates()

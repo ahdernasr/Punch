@@ -16,6 +16,10 @@
 		790127692AFEDCA900B7860C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790127682AFEDCA900B7860C /* Assets.xcassets */; };
 		7901276C2AFEDCA900B7860C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7901276B2AFEDCA900B7860C /* Preview Assets.xcassets */; };
 		7901276F2AFEDCA900B7860C /* Punch W Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 790127622AFEDCA800B7860C /* Punch W Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		790727412B4D409A008F5581 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790727402B4D409A008F5581 /* WatchConnector.swift */; };
+		790727462B4D4192008F5581 /* IOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790727452B4D4192008F5581 /* IOSConnector.swift */; };
+		790727492B4D4E71008F5581 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790727472B4D4AEB008F5581 /* WatchConnectivity.framework */; };
+		7907274C2B4D4E76008F5581 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790727432B4D40EE008F5581 /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		790127662AFEDCA800B7860C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		790127682AFEDCA900B7860C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7901276B2AFEDCA900B7860C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		790727402B4D409A008F5581 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
+		790727432B4D40EE008F5581 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		790727452B4D4192008F5581 /* IOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSConnector.swift; sourceTree = "<group>"; };
+		790727472B4D4AEB008F5581 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790727492B4D4E71008F5581 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7907274C2B4D4E76008F5581 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +86,11 @@
 		790127442AFEDB8D00B7860C = {
 			isa = PBXGroup;
 			children = (
+				793EFE032B4D924100F6691D /* Shared */,
 				7901274F2AFEDB8D00B7860C /* Punch */,
 				790127632AFEDCA800B7860C /* Punch W Watch App */,
 				7901274E2AFEDB8D00B7860C /* Products */,
+				790727422B4D40EE008F5581 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +110,7 @@
 				790127522AFEDB8D00B7860C /* ContentView.swift */,
 				790127542AFEDB8E00B7860C /* Assets.xcassets */,
 				790127562AFEDB8E00B7860C /* Preview Content */,
+				790727402B4D409A008F5581 /* WatchConnector.swift */,
 			);
 			path = Punch;
 			sourceTree = "<group>";
@@ -114,9 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				790127642AFEDCA800B7860C /* Punch_WApp.swift */,
-				790127762AFEE13E00B7860C /* View */,
+				790127662AFEDCA800B7860C /* ContentView.swift */,
 				790127682AFEDCA900B7860C /* Assets.xcassets */,
 				7901276A2AFEDCA900B7860C /* Preview Content */,
+				790727452B4D4192008F5581 /* IOSConnector.swift */,
 			);
 			path = "Punch W Watch App";
 			sourceTree = "<group>";
@@ -129,12 +143,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		790127762AFEE13E00B7860C /* View */ = {
+		790727422B4D40EE008F5581 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				790127662AFEDCA800B7860C /* ContentView.swift */,
+				790727472B4D4AEB008F5581 /* WatchConnectivity.framework */,
+				790727432B4D40EE008F5581 /* WatchConnectivity.framework */,
 			);
-			path = View;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		793EFE032B4D924100F6691D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				790127532AFEDB8D00B7860C /* ContentView.swift in Sources */,
+				790727412B4D409A008F5581 /* WatchConnector.swift in Sources */,
 				790127512AFEDB8D00B7860C /* PunchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				790127672AFEDCA800B7860C /* ContentView.swift in Sources */,
+				790727462B4D4192008F5581 /* IOSConnector.swift in Sources */,
 				790127652AFEDCA800B7860C /* Punch_WApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
