@@ -83,13 +83,14 @@ class CustomTimer {
         counter += interval
         if counter == 3{
             self.value = "3"
+            punchCallback?() 
         }
         if counter == 4 {
             self.value = "2"
         }
         if counter == 5 {
             self.value = "1"
-            punchCallback?() //Punch command sends a little early to the watch to make up for connectivity delay; does not have an effect on punch value
+            //Punch command sends a little early to the watch to make up for connectivity delay; does not have an effect on punch value
         }
         if counter == 6 {
             self.value = "Punch!"

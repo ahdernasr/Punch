@@ -3,7 +3,6 @@ import WatchConnectivity
 
 class IOSConnector : NSObject,  WCSessionDelegate, ObservableObject {
     var session: WCSession
-    @Published var start: Bool = false
     @Published var punchState: String = "None"
     
     init(session: WCSession = .default){
@@ -20,7 +19,6 @@ class IOSConnector : NSObject,  WCSessionDelegate, ObservableObject {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
             print(message["message"] as? String ?? "Unknown")
             DispatchQueue.main.async {
-                self.start = message["start"] as? Bool ?? false
                 self.punchState = message["punchState"] as? String ?? "X"
             }
         }

@@ -33,9 +33,9 @@ class WatchConnector : NSObject,  WCSessionDelegate, ObservableObject {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-            print(message["message"] as? String ?? "Unknown")
             DispatchQueue.main.async {
                 self.messageText = message["message"] as? Double ?? 0.0
+                print(self.messageText)
             }
         }
     

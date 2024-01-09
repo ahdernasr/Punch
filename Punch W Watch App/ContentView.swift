@@ -57,18 +57,6 @@ struct ContentView: View {
 
         @objc func timerAction() {
             counter += interval
-            if counter > 3-interval && counter < 3 {
-                print("3")
-            }
-            if counter > 4-interval && counter < 4 {
-                print("2")
-            }
-            if counter > 5-interval && counter < 5 {
-                print("1")
-            }
-            if counter > 6-interval && counter < 6 {
-                print("Punch!")
-            }
         }
         
         
@@ -139,7 +127,7 @@ struct ContentView: View {
                             
                         }
                         
-                        if timer.counter > 10-interval && timer.counter < 10 {
+                        if timer.counter > 5-interval && timer.counter < 5 {
 //                            print("X:", atx)
 //                            print("Y:", aty)
 //                            print("Z:", atz)
@@ -174,18 +162,24 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("State: \(connector.punchState)")
-            Button(action: {
-                print("Starting...")
-                startAccelerometerUpdates()
-            }) {
-                Text("Start")
-            }
         }
         .padding()
         .onAppear {
         }
         .onDisappear {
             stopAccelerometerUpdates()
+        }
+        .onChange(of: connector.punchState) {
+            handlePunchStateChange()
+        }
+    }
+    
+    func handlePunchStateChange() {
+        if connector.punchState == "Punch!" {
+            print("Started")
+            startAccelerometerUpdates()
+        } else {
+            print("Nothing")
         }
     }
     
