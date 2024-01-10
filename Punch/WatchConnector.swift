@@ -36,6 +36,7 @@ class WatchConnector : NSObject,  WCSessionDelegate, ObservableObject {
         print(message["message"] as? Double ?? 0.0)
             DispatchQueue.main.async {
                 self.messageText = message["message"] as? Double ?? 0.0
+                print(self.messageText)
             }
         }
     

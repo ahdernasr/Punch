@@ -84,6 +84,7 @@ class CustomTimer {
         counter += interval
         if counter == 3{
             self.value = "3"
+            punchCallback?() 
         }
         if counter == 4 {
             self.value = "2"
