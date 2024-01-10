@@ -57,18 +57,18 @@ struct ContentView: View {
 
         @objc func timerAction() {
             counter += interval
-            if counter > 3-interval && counter < 3 {
-                print("3")
-            }
-            if counter > 4-interval && counter < 4 {
-                print("2")
-            }
-            if counter > 5-interval && counter < 5 {
-                print("1")
-            }
-            if counter > 6-interval && counter < 6 {
-                print("Punch!")
-            }
+//            if counter > 3-interval && counter < 3 {
+//                print("3")
+//            }
+//            if counter > 4-interval && counter < 4 {
+//                print("2")
+//            }
+//            if counter > 5-interval && counter < 5 {
+//                print("1")
+//            }
+//            if counter > 6-interval && counter < 6 {
+//                print("Punch!")
+//            }
         }
         
         
@@ -126,7 +126,8 @@ struct ContentView: View {
                         var mz: Double = z*9.81
                         mz = mz < 5 && mz > -5 ? 0 : mz;
                         
-                        if timer.counter > 4 && timer.counter < 9.5 {
+                        if timer.counter > 3 && timer.counter < 9.5 {
+                            print("Started collection...")
                             
                             accelerationsX.append(mx)
                             accelerationsY.append(my)
@@ -139,6 +140,7 @@ struct ContentView: View {
                             
                         }
                         
+                        //Runs once when all the data is collected
                         if timer.counter > 10-interval && timer.counter < 10 {
 //                            print("X:", atx)
 //                            print("Y:", aty)
@@ -151,11 +153,19 @@ struct ContentView: View {
                             connector.session.sendMessage(["message" : vx], replyHandler: nil) { (error) in
                                                 print(error.localizedDescription)
                                             }
+                            
+                            connector.punchState = "None"
+                            accelerationsX = []
+                            accelerationsY = []
+                            accelerationsZ = []
+                            atx = []
+                            aty = []
+                            atz = []
 //                            print(vx)
 //                            let vy = findVelocityAt(arr: accelerationsY, at: i)
 //                            let vz = findVelocityAt(arr: accelerationsZ, at: i)
 //                            print(vy,vz,sqrt(pow(vx, 2) + pow(vy, 2) + pow(vz, 2))) !!!!!!!!!
-                            
+                            stopAccelerometerUpdates()
                             
                         }
                     }
@@ -172,22 +182,28 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            Text("State: \(connector.punchState)")
-            Button(action: {
-                print("Starting...")
-                startAccelerometerUpdates()
-            }) {
-                Text("Start")
-            }
-        }
-        .padding()
-        .onAppear {
-        }
-        .onDisappear {
-            stopAccelerometerUpdates()
-        }
+    VStack {
+        Text("State: \(connector.punchState)")
     }
+    .padding()
+    .onAppear {
+    }
+    .onDisappear {
+        stopAccelerometerUpdates()
+    }
+    .onChange(of: connector.punchState) {
+        handlePunchStateChange()
+    }
+}
+
+func handlePunchStateChange() {
+    if connector.punchState == "Punch!" {
+        print("Started")
+        startAccelerometerUpdates()
+    } else {
+        print("Nothing")
+    }
+}
     
     
     

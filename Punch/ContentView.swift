@@ -71,6 +71,7 @@ class CustomTimer {
                                      selector: #selector(timerAction),
                                      userInfo: nil,
                                      repeats: true)
+        punchCallback?() //Starts the operation on the apple watch
     }
     
     func stopTimer() {
@@ -89,7 +90,7 @@ class CustomTimer {
         }
         if counter == 5 {
             self.value = "1"
-            punchCallback?() //Punch command sends a little early to the watch to make up for connectivity delay; does not have an effect on punch value
+            //Punch command sends a little early to the watch to make up for connectivity delay; does not have an effect on punch value
         }
         if counter == 6 {
             self.value = "Punch!"
