@@ -157,7 +157,7 @@ struct ContentView: View {
     
     var body: some View {
     VStack {
-        Text("State: \(connector.punchState)")
+        Text("Follow instructions on iOS Companion.")
     }
     .padding()
     .onAppear {
