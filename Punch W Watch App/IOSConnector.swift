@@ -4,6 +4,7 @@ import WatchConnectivity
 class IOSConnector : NSObject,  WCSessionDelegate, ObservableObject {
     var session: WCSession
     @Published var punchState: String = "None"
+    @Published var handState: String = "Left Hand"
     
     init(session: WCSession = .default){
         self.session = session
@@ -17,11 +18,11 @@ class IOSConnector : NSObject,  WCSessionDelegate, ObservableObject {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-            print(message["message"] as? String ?? "Unknown")
-            DispatchQueue.main.async {
-                self.punchState = message["punchState"] as? String ?? "X"
-            }
+        DispatchQueue.main.async {
+            self.punchState = message["punchState"] as? String ?? ""
+            self.handState = message["handState"] as? String ?? "Left Hand"
         }
+    }
 }
 
 //    func sendToIOS(result: Double) {

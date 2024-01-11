@@ -1,17 +1,20 @@
-//
-//  PunchApp.swift
-//  Punch
-//
-//  Created by Ahmed Nasr on 10/11/2023.
-//
-
 import SwiftUI
 
 @main
 struct PunchApp: App {
+    @State private var isFirstLaunch: Bool
+
+    init() {
+        _isFirstLaunch = State(initialValue: !UserDefaults.standard.bool(forKey: "hasLaunchedBefore"))
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isFirstLaunch {
+                FirstLaunchView()
+            } else {
+                ContentView()
+            }
         }
     }
 }
