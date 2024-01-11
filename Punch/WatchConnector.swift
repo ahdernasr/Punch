@@ -3,21 +3,6 @@ import WatchConnectivity
 
 class WatchConnector : NSObject,  WCSessionDelegate, ObservableObject {
     
-//    var session: WCSession
-//    @Published var messageText = 0.0
-//    @Published var isConnected = false
-//    
-//    init(session: WCSession = .default) {
-//        self.session = session
-//        super.init()
-//        session.delegate = self
-//        session.activate()
-//    }
-//    
-//    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//        updateConnectionStatus()
-//    }
-    
     var session: WCSession
     @Published var messageText = 0.0
     @Published var isReachable = false

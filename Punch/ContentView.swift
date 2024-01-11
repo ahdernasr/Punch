@@ -15,16 +15,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack{
-//                Text("Reachable \(String(reachable))")
-//                            
-//                Button(action: {
-//                    if self.connector.session.isReachable {
-//                        self.reachable = true
-//                    } else {
-//                        self.reachable = false
-//                    }}) {
-//                        Text("Update")
-//                    }
                                     
                 HStack {
                     Button("Left Hand") {
@@ -146,6 +136,7 @@ class CustomTimer {
     @objc func timerAction() {
         counter += interval
         if counter == 3{
+            //Punch command sends a little early to the watch to make up for connectivity delay; does not have an effect on punch value
             self.value = "3"
             punchCallback?()
         }
@@ -154,7 +145,6 @@ class CustomTimer {
         }
         if counter == 5 {
             self.value = "1"
-            //Punch command sends a little early to the watch to make up for connectivity delay; does not have an effect on punch value
         }
         if counter == 6 {
             self.value = "Punch!"

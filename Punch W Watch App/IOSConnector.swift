@@ -24,20 +24,3 @@ class IOSConnector : NSObject,  WCSessionDelegate, ObservableObject {
         }
     }
 }
-
-//    func sendToIOS(result: Double) {
-//        if session.isReachable {
-//            let data: [String: Any] = [
-//                "vx": result
-//            ]
-//            session.sendMessage(data, replyHandler: { reply in
-//                // Handle reply if needed
-//                print("Reply received: \(reply)")
-//            }, errorHandler: { error in
-//                print("Error sending message: \(error.localizedDescription)")
-//            })
-//            print("Message sent")
-//        } else {
-//            print("Session not reachable")
-//        }
-//    }

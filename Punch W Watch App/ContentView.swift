@@ -49,17 +49,6 @@ struct ContentView: View {
         
         
     }
-    
-//    func findVelocityAt(arr: [Double], at: Int) -> Double {
-//        var currVelocity: Double = 0
-//        
-//        for i in 1..<at {
-//            let delta = (atx[i].2)-(atx[i-1].2)
-//            currVelocity += delta*(arr[i])
-//        }
-//        
-//        return currVelocity
-//    }
 
     func findMaxVelocity(arr: [Double], axis: [(Double, Double, CFAbsoluteTime)], isRight: Bool) -> (Double, Int) {
         var currVelocity: Double = 0
@@ -75,8 +64,6 @@ struct ContentView: View {
             } else {
                 currVelocity += delta*(arr[i])
             }
-            
-//            print((arr[i], currVelocity))
             
             if currVelocity > maxVelocity {
                 maxVelocity = currVelocity
@@ -122,10 +109,7 @@ struct ContentView: View {
                         
                         //Runs once when all the data is collected
                         if timer.counter > 8-interval && timer.counter < 8 {
-                            
-                            //is this really the best way to do it?
-                            //what if I could find the max velocity relative to y and z and compare which has the highest?
-                            
+                
                             // the max velocity is calculated on the plot of accelerations on the X or Z axis depending on the hand being used (left: x, right: z)
                             var chosenPlane = accelerationsX
                             var chosenAxis = atx
