@@ -61,13 +61,13 @@ struct ContentView: View {
                 }.buttonStyle(.bordered).controlSize(.large).buttonBorderShape(.roundedRectangle(radius: 12)).tint(.gray).foregroundColor(colorScheme == .dark ? .white : .black).disabled(!self.connector.isReachable)
                 
                 
-                Button(action: {
-                    //View punch history, future feature
-                    
-                }) {
-                    Text("Punch History").frame(width: 150, height: 20)
-                }.buttonStyle(.bordered).controlSize(.large).buttonBorderShape(.roundedRectangle(radius: 12)).tint(.gray).foregroundColor(colorScheme == .dark ? .white : .black).disabled(true)
-                
+//                Button(action: {
+//                    //View punch history, future feature
+//                    
+//                }) {
+//                    Text("Punch History").frame(width: 150, height: 20)
+//                }.buttonStyle(.bordered).controlSize(.large).buttonBorderShape(.roundedRectangle(radius: 12)).tint(.gray).foregroundColor(colorScheme == .dark ? .white : .black).disabled(true)
+//                
                 //            Text("Value: \(connector.messageText)")
                 
             }.navigationBarItems(leading: Button(action: {
